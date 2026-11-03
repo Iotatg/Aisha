@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: aisha
+    runtime: python
+    plan: starter
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 main.py
+    autoDeploy: true
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: MONGO_URI
+        sync: false
+      - key: DB_NAME
+        value: aisha_bot
+      - key: BOT_USERNAME
+        value: im_aishabot
+      - key: OWNER_ID
+        value: "6998484205"
+      - key: OWNER_USERNAME
+        value: im_ntg
+      - key: AISHA_OPENROUTER_API_KEY
+        sync: false
+      - key: AISHA_OPENROUTER_MODEL
+        value: "stealth/space-bunny-alpha"
+      - key: AI_TIMEOUT
+        value: "25"
+      - key: PORT
+        value: "8080"
